@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class PowerUp : MonoBehaviour
 {
     private Action<PowerUp> _destroyMethod;
+    private Action reducing;
 
     public abstract void Buff(PlayerModel playerToBuff);
 
@@ -20,13 +21,19 @@ public abstract class PowerUp : MonoBehaviour
         }
     }
 
-    public void Initialize(Vector3 initPosition, Action<PowerUp> destroyMethod)
+    public void Initialize(Vector3 initPosition, Action<PowerUp> destroyMethod, Action reduce)
     {
         transform.position = initPosition;
         _destroyMethod = destroyMethod;
+        reducing = reduce;
     }
 
-    public void ReturnPowerUp() { }
+    private void DeleteFromList()
+    {
+        reducing?.Invoke();
+    }
+
+    public void ReturnPowerUp() { DeleteFromList(); }
 
     protected void DestroyPowerUp() => _destroyMethod(this);
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,10 @@ public class EnemyFactory
 
     public EnemyFactory(Enemy enemy) => _enemyPool = new ObjectPool<Enemy>(enemy, _enemyPreWarm, Factory, TurnOn, TurnOff);
 
-    public Enemy MakeEnemy(Vector3 enemyPosition)
+    public Enemy MakeEnemy(Vector3 enemyPosition, Action reduce)
     {
         Enemy newEnemy = _enemyPool.GetObjects();
-        newEnemy.Initialize(enemyPosition, ReturnEnemy);
+        newEnemy.Initialize(enemyPosition, ReturnEnemy, reduce);
         return newEnemy;
     }
 

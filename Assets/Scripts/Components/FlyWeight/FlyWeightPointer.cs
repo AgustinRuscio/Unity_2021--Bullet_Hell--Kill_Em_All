@@ -9,8 +9,13 @@ public class FlyWeightPointer
     public static readonly FlyWeight EnemiesAtributs = new FlyWeight()
     {
         enemyBaseSpeed = 3,
-        enemyDamage = 10,
-        enemyMaxLife = 100,
+
+        meleeEnemyDamage = 10,
+        kamekazeEnemyDamage = 50,
+
+        meleeEnemyMaxLife = 100,
+        rangeEnemyMaxLife = 80,
+
         enemyRotationSpeed = 2
     };
 

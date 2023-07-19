@@ -29,6 +29,11 @@ public class PowerUpsSpawner : MonoBehaviour
         Factory = new PowerUpFactory(_powerUpPrefab);
     }
 
+    public void Reduce()
+    {
+        _counter--;
+    }
+
     private void Update()
     {
         _timer.RunTimer();
@@ -37,7 +42,7 @@ public class PowerUpsSpawner : MonoBehaviour
         {
             int i = Random.Range(0, _spawnPoints.Length);
 
-            Factory.MakePowerUp(_spawnPoints[i].position);
+            Factory.MakePowerUp(_spawnPoints[i].position, Reduce);
             _timer.ResetTimer();
             _counter++;
         }

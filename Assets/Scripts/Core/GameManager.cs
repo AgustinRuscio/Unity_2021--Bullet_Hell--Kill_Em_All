@@ -20,6 +20,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _losePanel;
 
+    [SerializeField] 
+    private ProgressBar progressBar;
+
+    private ICommand updateCommand;
+    private float progress = 0; 
+
+
     private float _endGameTimer;
     
     [SerializeField]
@@ -28,8 +35,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string _nextLevel;
 
-    [SerializeField]
-    private TMPro.TextMeshProUGUI _textMeshProUGUI;
 
     private void Awake()
     {
@@ -39,6 +44,8 @@ public class GameManager : MonoBehaviour
         EventManager.Subscribe(EventEnum.NextLevel, NextLevel);
         EventManager.Subscribe(EventEnum.RetryLevel, RetyLevel);
         EventManager.Subscribe(EventEnum.LoseLevel, LoseLevel);
+
+        updateCommand = new UpdateProgressBarCommand(progressBar);
 
         _endGameTimer = _roundTime;
     }
@@ -50,18 +57,17 @@ public class GameManager : MonoBehaviour
 
     private void RoundTimer()
     {
-        _endGameTimer = _endGameTimer - 1 * Time.deltaTime;
+        _endGameTimer -= Time.deltaTime;
 
-        int minutes = Mathf.FloorToInt(_endGameTimer / 60f);
-        int seconds = Mathf.FloorToInt(_endGameTimer % 60f);
+        progress = Mathf.Clamp01(_endGameTimer / _roundTime);
 
-        if (_endGameTimer <= 0)
-        {
+        if (_endGameTimer <= 0) { 
+
             _endGameTimer = 0;
             WinLevel();
         }
 
-        _textMeshProUGUI.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        updateCommand.Execute(progress);
     }
 
     #region Canvas

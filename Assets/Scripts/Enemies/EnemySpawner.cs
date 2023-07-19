@@ -37,9 +37,14 @@ public class EnemySpawner : MonoBehaviour
         {
             int i = Random.Range(0, _spawnPoints.Length);
 
-            _enemyFactory.MakeEnemy(_spawnPoints[i].position);
+            _enemyFactory.MakeEnemy(_spawnPoints[i].position, Reduce);
             _timer.ResetTimer();
             _enemyCounter++;
         }
+    }
+
+    private void Reduce()
+    {
+        _enemyCounter--;
     }
 }

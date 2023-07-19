@@ -134,7 +134,7 @@ MonoBehaviour:
   _damageMultiplayer: 2
   fireRate: 0.5
   particleSystem: {fileID: 3909278322211244586}
-  bulletCount: 3
+  bulletCount: 5
   bulletSpread: 15
   _offSetMultiplayer: 1
 --- !u!1 &7998898047220632166

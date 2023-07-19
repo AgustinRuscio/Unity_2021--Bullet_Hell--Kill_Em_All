@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,10 @@ public class PowerUpFactory
 
     public PowerUpFactory(PowerUp powerUp) => _powerUpPool = new ObjectPool<PowerUp>(powerUp, _enemyPreWarm, Factory, TurnOn, TurnOff);
 
-    public PowerUp MakePowerUp(Vector3 powerUpPosition)
+    public PowerUp MakePowerUp(Vector3 powerUpPosition, Action reduce)
     {
         PowerUp newPowerUp = _powerUpPool.GetObjects();
-        newPowerUp.Initialize(powerUpPosition, ReturnEnemy);
+        newPowerUp.Initialize(powerUpPosition, ReturnPowerUp, reduce);
         return newPowerUp;
     }
 
@@ -23,7 +24,7 @@ public class PowerUpFactory
         return newPowerUp;
     }
 
-    private void ReturnEnemy(PowerUp powerUpToReturn) => _powerUpPool.ReturnObjects(powerUpToReturn);
+    private void ReturnPowerUp(PowerUp powerUpToReturn) => _powerUpPool.ReturnObjects(powerUpToReturn);
 
     private void TurnOn(PowerUp powerUp) => powerUp.gameObject.SetActive(true);
 

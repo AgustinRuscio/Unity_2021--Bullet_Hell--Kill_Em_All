@@ -11,6 +11,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
     private Action<Enemy> _destroyMethod;
+    private Action _reduce;
 
     protected Transform _player;
 
@@ -30,10 +31,10 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     [SerializeField]
     private Animator _animator;
 
-    [SerializeField]
-    protected AttackZone _attackZone;
 
-    protected float _life = FlyWeightPointer.EnemiesAtributs.enemyMaxLife;
+    protected float _life;
+
+    protected abstract void SetLife();
 
 
     private void Start()
@@ -41,32 +42,39 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         _rigidBody = GetComponent<Rigidbody>();
         _player = FindObjectOfType<PlayerModel>().transform;
 
-
         _view = new EnemyView(_animator);
     }
 
 
-    public void Initialize(Vector3 initPosition, Action<Enemy> destroyMethod)
+    public void Initialize(Vector3 initPosition, Action<Enemy> destroyMethod, Action reducingMethod)
     {
         transform.position = initPosition;
         _destroyMethod = destroyMethod;
+        _reduce = reducingMethod;
     }
 
-    public void ReturnEnemy() => _life = FlyWeightPointer.EnemiesAtributs.enemyMaxLife; 
+    private void DeleteFromList() => _reduce?.Invoke();
+
+
+    public void ReturnEnemy()
+    {
+        DeleteFromList();
+        _life = FlyWeightPointer.EnemiesAtributs.meleeEnemyMaxLife;
+    }
 
     protected void DestroyEnemy() => _destroyMethod(this);
 
     protected abstract void MoveToPlayer();
     protected abstract void Attack();
 
-    private void Death()
+    protected virtual void Death()
     {
         _renderer.enabled = false;
         _deathParticles.Play();
 
         StartCoroutine(Wait());
-
     }
+
 
     IEnumerator Wait()
     {
@@ -78,7 +86,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         DestroyEnemy();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         MoveToPlayer();
     }
@@ -87,13 +95,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     {
         _life -= damage;
 
-        Debug.Log("Hurt");
-
         if(_life <= 0)
-        {
             Death();
-        }
     }
-
-
 }

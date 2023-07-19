@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class AttackZone : MonoBehaviour
 {
-    public float damage = FlyWeightPointer.EnemiesAtributs.enemyDamage;
-
-    public void SetDamage(float multiplayer)
-    {
-        damage *= multiplayer;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        var plater = other.gameObject.GetComponent<PlayerModel>();
+        var player = other.gameObject.GetComponent<PlayerModel>();
 
-        if (plater != null)
-        {
-            plater.TakeDamage(damage);
-        }
-
+        if (player != null && !player.shield)
+            player.TakeDamage(FlyWeightPointer.EnemiesAtributs.meleeEnemyDamage);
     }
 }

@@ -45,13 +45,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2314856915119641947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42546e3011cf7d743a5fe3e3321686c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _coolDown: 3
-  _enemyPrefab: {fileID: 5039563136280442622, guid: 10bfea660d7370149b00c66cfeb15365, type: 3}
+  _enemyPrefab: {fileID: 3936773740814514892, guid: b1ca745380d5d1f45a6776665a7ce8d3, type: 3}
   _maxEnemies: 25
   _spawnPoints:
   - {fileID: 2314856916002970437}
@@ -65,13 +65,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2314856915119641947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42546e3011cf7d743a5fe3e3321686c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _coolDown: 5
-  _enemyPrefab: {fileID: 7636432568844345441, guid: a4f199536983a044484aa01a8a3bdd26, type: 3}
+  _enemyPrefab: {fileID: 3724763199661326671, guid: 32fe05556c61acc49b47e558f5c53b24, type: 3}
   _maxEnemies: 20
   _spawnPoints:
   - {fileID: 2314856916002970437}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2314856915119641947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42546e3011cf7d743a5fe3e3321686c7, type: 3}
   m_Name: 

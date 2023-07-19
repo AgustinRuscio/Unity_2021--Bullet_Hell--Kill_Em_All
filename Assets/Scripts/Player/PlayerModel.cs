@@ -76,6 +76,8 @@ public class PlayerModel : MonoBehaviour, IDamageable
 
     private Vector3 direction;
 
+    public bool shield;
+
     void Awake()
     {
         _baseSpeed = _speed;
@@ -226,12 +228,14 @@ public class PlayerModel : MonoBehaviour, IDamageable
     public void ShieldOn(float time) 
     {
         _shield.SetActive(true);
+        shield = true;
         StartCoroutine(ShieldOff(time));
     }
 
     IEnumerator ShieldOff(float time)
     {
         yield return new WaitForSeconds(time);
+        shield = false;
         _shield.SetActive(false);
     }
 
@@ -241,6 +245,8 @@ public class PlayerModel : MonoBehaviour, IDamageable
 
         if (_life > _maxLife)
             _life = _maxLife;
+
+        UpdateLifeBar(_life);
     }
 
     public void SpeedUp(float multiplayer, float time)
