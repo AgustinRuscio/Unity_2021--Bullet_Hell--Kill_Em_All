@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
 
 public interface ICommand
 {
-    void Execute(float progress);
+    public void Execute(float progress);
 }

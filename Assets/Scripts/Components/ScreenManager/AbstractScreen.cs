@@ -30,5 +30,4 @@ public class AbstractScreen : MonoBehaviour, IScreen
         myCanvasGroup.blocksRaycasts = false;
         myCanvasGroup.interactable = false;
     }
-
 }

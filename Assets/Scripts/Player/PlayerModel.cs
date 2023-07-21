@@ -1,8 +1,12 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using Unity.VisualScripting;
 using UnityEngine.UI;
 
 
@@ -27,7 +31,6 @@ public class PlayerModel : MonoBehaviour, IDamageable
     private Action SystemMethods;
 
     //View Delegates
-
     private Action<float, float> MoveAnim;
     private Action<float> UpdateLifeBar;
     private Action DeathAnim;
@@ -121,6 +124,7 @@ public class PlayerModel : MonoBehaviour, IDamageable
         {
             images.Add(image.image);
         }
+
         return images;
     }
 
@@ -133,10 +137,8 @@ public class PlayerModel : MonoBehaviour, IDamageable
         MoveAnim(direction.x, direction.z);
     }
 
-    private void FixedUpdate()
-    {
-        MovementMethods();
-    }
+    private void FixedUpdate() => MovementMethods();
+    
 
     public void Move(Vector3 dir)
     {
@@ -263,8 +265,6 @@ public class PlayerModel : MonoBehaviour, IDamageable
         _speed = _baseSpeed;
     }
     #endregion
-    public void Fire(bool fire)
-    {
-        _currentWeapon.weapon.FireWeapon(fire);
-    }
+
+    public void Fire(bool fire) => _currentWeapon.weapon.FireWeapon(fire);
 }

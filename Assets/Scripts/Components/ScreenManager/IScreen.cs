@@ -3,7 +3,6 @@
 //--------------------------------------------
 
 
-
 public interface IScreen
 {
     void Activate();

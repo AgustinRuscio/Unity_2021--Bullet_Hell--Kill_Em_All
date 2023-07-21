@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class ShotGunWeapon : Weapon
@@ -31,7 +34,7 @@ public class ShotGunWeapon : Weapon
                     Quaternion rotation = Quaternion.Euler(0f, spreadAngle, 0f) * _spawnPoint.rotation;
 
                     BulletManager.instance.BulletFactory().MakeBullet(bulletPosition, _spawnPoint.forward, rotation, _damageMultiplayer);
-                    particleSystem.Play();
+                    _particleSystem.Play();
                 }
             }
         }

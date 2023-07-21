@@ -16,5 +16,4 @@ public class FlyWeight
     public float bulletSpeed;
     public float bulletLifeTime;
     public float bulletBaseDamage;
-
 }

@@ -1,5 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 

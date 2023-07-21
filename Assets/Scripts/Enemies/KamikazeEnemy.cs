@@ -1,6 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class KamikazeEnemy : Enemy

@@ -1,4 +1,8 @@
-using System.Collections;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,12 +18,10 @@ public class PlayerView
     private Image _shotGunImage;
     private Image _rocketLuncherImage;
 
-    Dictionary<string, Image> _weapons = new Dictionary<string, Image>();
+    private Dictionary<string, Image> _weapons = new Dictionary<string, Image>();
 
-    public PlayerView(float maxLife)
-    {
-        _maxLife = maxLife;
-    }
+    public PlayerView(float maxLife) => _maxLife = maxLife;
+    
 
     public PlayerView SetImages(List<Image> images)
     {

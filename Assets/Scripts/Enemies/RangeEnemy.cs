@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class RangeEnemy : Enemy
@@ -65,5 +68,4 @@ public class RangeEnemy : Enemy
     public void Throw() => BulletManager.instance.AxeFactory().MakeBullet(_shootPoint.position, _shootPoint.forward, transform.rotation, _damageMultiplayer);
 
     protected override void SetLife() => _life = FlyWeightPointer.EnemiesAtributs.rangeEnemyMaxLife;
-    
 }

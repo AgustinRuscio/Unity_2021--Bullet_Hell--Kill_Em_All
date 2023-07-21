@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
@@ -14,6 +17,5 @@ public class CameraMovement : MonoBehaviour
 
     private void Start() => _target = FindObjectOfType<PlayerModel>().transform;
     
-
     private void Update() => transform.position = Vector3.Lerp(transform.position, _target.position - _offSet, _speed*Time.deltaTime);
 }

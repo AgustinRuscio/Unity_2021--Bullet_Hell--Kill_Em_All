@@ -1,3 +1,7 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
 
 using UnityEngine;
 
@@ -31,5 +35,4 @@ public class BulletFactory
         bullet.ReturnBullet();
         bullet.gameObject.SetActive(false);
     }
-
 }

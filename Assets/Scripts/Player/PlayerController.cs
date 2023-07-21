@@ -1,6 +1,10 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
 
 public class PlayerController
 {
@@ -14,7 +18,6 @@ public class PlayerController
     {
         this.model = model;
         SetActions();
-
     }
 
     private void SetActions()
@@ -29,15 +32,12 @@ public class PlayerController
 
     public void MovementMethods() => movementMethods();
     
-
     public void WeaponMethods() => MouseMethods();
     public void SystemMethods() => systemMethods();
-    
 
     public void MovementController() => model.Move(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
     
     public void Fire() => model.Fire(Input.GetMouseButton(0));
-    
 
     public void MouseRotation() => model.RotatePlayer(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.y)));
     
@@ -51,6 +51,5 @@ public class PlayerController
 
         if (Input.GetKeyDown(KeyCode.Q))
             model.PrevWeapon();
-
     }
 }

@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class RifleWeapon : Weapon
@@ -13,7 +16,7 @@ public class RifleWeapon : Weapon
             if ((bool)p[0])
             {
                 BulletManager.instance.BulletFactory().MakeBullet(_spawnPoint.position, _spawnPoint.forward,_spawnPoint.rotation ,_damageMultiplayer);
-                particleSystem.Play();
+                _particleSystem.Play();
                 nextFireTime = Time.time + fireRate;
             }
         }

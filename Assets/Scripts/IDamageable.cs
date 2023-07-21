@@ -1,3 +1,7 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
 
 public interface IDamageable
 {

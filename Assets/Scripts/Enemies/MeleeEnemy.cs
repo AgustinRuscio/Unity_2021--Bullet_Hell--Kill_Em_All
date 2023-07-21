@@ -3,8 +3,6 @@
 //--------------------------------------------
 
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeEnemy : Enemy
@@ -15,20 +13,13 @@ public class MeleeEnemy : Enemy
     [SerializeField]
     protected AttackZone _attackZone;
 
-    protected override void Attack()
-    {
-        _view.SetAttack();
-    }
+    protected override void Attack() => _view.SetAttack();
 
     //Event Anim
-    private void AttackOn()
-    {
-        _punchZone.SetActive(true);
-    }
-    private void AttackOff()
-    {
-        _punchZone.SetActive(false);
-    }
+    private void AttackOn() => _punchZone.SetActive(true);
+    
+    private void AttackOff() => _punchZone.SetActive(false);
+    
 
     protected override void MoveToPlayer()
     {
@@ -52,5 +43,4 @@ public class MeleeEnemy : Enemy
     }
 
     protected override void SetLife() => _life = FlyWeightPointer.EnemiesAtributs.meleeEnemyMaxLife;
-    
 }

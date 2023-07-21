@@ -1,6 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
@@ -17,12 +20,11 @@ public abstract class Weapon : MonoBehaviour
     public float fireRate;
 
     [SerializeField]
-    protected ParticleSystem particleSystem;
+    protected ParticleSystem _particleSystem;
 
     protected Action<bool> FireAnim;
 
     public void SetFireAnim(Action<bool> fire) => FireAnim = fire;
     
-
     public abstract void FireWeapon(params object[] parameters);
 }

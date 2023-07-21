@@ -1,3 +1,8 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System;
 using UnityEngine;
 
@@ -10,7 +15,7 @@ public abstract class Bullet : MonoBehaviour
 
     private GenericTimer _timer;
 
-    Vector3 _originalFwd;
+    private Vector3 _originalFwd;
 
     protected float _damage = FlyWeightPointer.BulletAtributs.bulletBaseDamage;
 
@@ -35,7 +40,6 @@ public abstract class Bullet : MonoBehaviour
         if (_timer.CheckCoolDown())
             DestroyBullet();
     }
-
 
     public void Initialize(Vector3 initPosition ,Action<Bullet> destroyMethod, Vector3 fwd, Quaternion rotation, float multuplayer)
     {

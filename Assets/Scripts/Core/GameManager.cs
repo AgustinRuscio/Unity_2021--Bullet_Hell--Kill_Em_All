@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,7 +28,6 @@ public class GameManager : MonoBehaviour
 
     private ICommand updateCommand;
     private float progress = 0; 
-
 
     private float _endGameTimer;
     
@@ -53,10 +55,8 @@ public class GameManager : MonoBehaviour
         _endGameTimer = _roundTime;
     }
 
-    private void Update()
-    {
-        RoundTimer();
-    }
+    private void Update() => RoundTimer();
+    
 
     private void RoundTimer()
     {

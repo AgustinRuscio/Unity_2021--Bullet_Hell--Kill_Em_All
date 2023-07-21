@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class RocketBullet : Bullet
@@ -30,6 +33,5 @@ public class RocketBullet : Bullet
 
         if (!_particleSystem.isPlaying)
             DestroyBullet();
-        
     }
 }

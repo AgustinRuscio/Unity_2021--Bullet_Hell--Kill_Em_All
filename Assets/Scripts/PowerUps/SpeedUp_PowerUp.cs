@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class SpeedUp_PowerUp : PowerUp
@@ -11,5 +14,4 @@ public class SpeedUp_PowerUp : PowerUp
     private float _buffTime;
     
     public override void Buff(PlayerModel playerToBuff) => playerToBuff.SpeedUp(_speedMultiplayer, _buffTime);
-  
 }

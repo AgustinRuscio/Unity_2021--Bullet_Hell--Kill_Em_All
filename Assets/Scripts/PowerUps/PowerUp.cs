@@ -1,6 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
@@ -28,11 +31,8 @@ public abstract class PowerUp : MonoBehaviour
         reducing = reduce;
     }
 
-    private void DeleteFromList()
-    {
-        reducing?.Invoke();
-    }
-
+    private void DeleteFromList() => reducing?.Invoke();
+    
     public void ReturnPowerUp() { DeleteFromList(); }
 
     protected void DestroyPowerUp() => _destroyMethod(this);
