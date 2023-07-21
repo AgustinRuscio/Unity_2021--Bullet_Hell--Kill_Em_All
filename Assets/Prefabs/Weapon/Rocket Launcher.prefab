@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5555501775854752906
 Transform:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 4932317417822853489}
   _damageMultiplayer: 3
   fireRate: 1
-  particleSystem: {fileID: 0}
+  particleSystem: {fileID: 5369173936518259747}
 --- !u!1 &5373816983300721876
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9043142634492965178}
   m_LocalRotation: {x: -0.45826435, y: -0.5496998, z: -0.4471768, w: -0.536523}
-  m_LocalPosition: {x: 1.591, y: 0.014, z: 0.358}
+  m_LocalPosition: {x: 1.68, y: 0.028, z: 0.344}
   m_LocalScale: {x: 1.7499999, y: 1.7499999, z: 1.7499994}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,6 +427,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5555501775854752906}
     m_Modifications:
+    - target: {fileID: 326237923105789054, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326237923610807919, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358153449002395977, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358153449511088984, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358615998548848738, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358646231151870660, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358646231628060885, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358853680063115719, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 447969145919814906, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -471,6 +503,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 448288856343651559, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 450044020708499364, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
       propertyPath: m_Name
       value: RocketMuzzle
@@ -480,5 +516,10 @@ PrefabInstance:
 --- !u!4 &5202683442104175783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 447969145919814906, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+  m_PrefabInstance: {fileID: 5621658461957763165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5369173936518259747 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 326237923105789054, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
   m_PrefabInstance: {fileID: 5621658461957763165}
   m_PrefabAsset: {fileID: 0}

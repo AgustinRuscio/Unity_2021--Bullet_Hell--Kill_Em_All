@@ -56,29 +56,32 @@ public class KamikazeEnemy : Enemy
 
     protected override void MoveToPlayer()
     {
-        Vector3 dir = _player.position - transform.position;
-        Vector3 dirWithOffset = dir + _offSet;
-        dirWithOffset.Normalize();
-
-        dirWithOffset *= FlyWeightPointer.EnemiesAtributs.enemyBaseSpeed;
-
-        dirWithOffset.y = 0;
-
-        transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.EnemiesAtributs.enemyRotationSpeed * Time.deltaTime);
-
-        _rigidBody.velocity = dirWithOffset;
-
-        if (Vector3.Distance(transform.position, _player.position) > _explosionRadius)
+        if(_life > 0)
         {
-            _timer.ResetTimer();
-            _tikingSound.Stop();
-        }
-        else
-        {
-            _timer.RunTimer();
+            Vector3 dir = _player.position - transform.position;
+            Vector3 dirWithOffset = dir + _offSet;
+            dirWithOffset.Normalize();
 
-            if(!_tikingSound.isPlaying)
-                _tikingSound.Play();
+            dirWithOffset *= FlyWeightPointer.EnemiesAtributs.enemyBaseSpeed;
+
+            dirWithOffset.y = 0;
+
+            transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.EnemiesAtributs.enemyRotationSpeed * Time.deltaTime);
+
+            _rigidBody.velocity = dirWithOffset;
+
+            if (Vector3.Distance(transform.position, _player.position) > _explosionRadius)
+            {
+                _timer.ResetTimer();
+                _tikingSound.Stop();
+            }
+            else
+            {
+                _timer.RunTimer();
+
+                if(!_tikingSound.isPlaying)
+                    _tikingSound.Play();
+            }
         }
     }
 

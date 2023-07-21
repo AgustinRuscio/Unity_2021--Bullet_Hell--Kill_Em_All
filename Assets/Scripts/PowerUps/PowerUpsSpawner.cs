@@ -22,29 +22,36 @@ public class PowerUpsSpawner : MonoBehaviour
     [SerializeField]
     private Transform[] _spawnPoints;
 
+    [SerializeField]
+    private bool _active;
+
     private void Awake()
     {
-        _timer = new GenericTimer().SetCoolDown(_coolDown);
+        if (_active)
+        {
+            _timer = new GenericTimer().SetCoolDown(_coolDown);
 
-        Factory = new PowerUpFactory(_powerUpPrefab);
+            Factory = new PowerUpFactory(_powerUpPrefab);
+        }
     }
 
-    public void Reduce()
-    {
-        _counter--;
-    }
+    public void Reduce() => _counter--;
+    
 
     private void Update()
     {
-        _timer.RunTimer();
-
-        if (_timer.CheckCoolDown() & _counter < _maxSpawned)
+        if (_active)
         {
-            int i = Random.Range(0, _spawnPoints.Length);
+            _timer.RunTimer();
 
-            Factory.MakePowerUp(_spawnPoints[i].position, Reduce);
-            _timer.ResetTimer();
-            _counter++;
+            if (_timer.CheckCoolDown() & _counter < _maxSpawned)
+            {
+                int i = Random.Range(0, _spawnPoints.Length);
+
+                Factory.MakePowerUp(_spawnPoints[i].position, Reduce);
+                _timer.ResetTimer();
+                _counter++;
+            }
         }
     }
 }

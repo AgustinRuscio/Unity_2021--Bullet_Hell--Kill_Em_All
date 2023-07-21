@@ -38,7 +38,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Instantiate(_playerPrefab, _playerSpawnPoint.position, _playerSpawnPoint.rotation);
+        Time.timeScale = 1f;
+
+        PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
+
         EventManager.Subscribe(EventEnum.PauseGame, PauseGame);
         EventManager.Subscribe(EventEnum.BackToMenu, BackToMenu);
         EventManager.Subscribe(EventEnum.NextLevel, NextLevel);

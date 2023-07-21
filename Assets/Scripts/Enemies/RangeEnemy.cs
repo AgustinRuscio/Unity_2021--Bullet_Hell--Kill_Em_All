@@ -42,7 +42,7 @@ public class RangeEnemy : Enemy
 
         transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.EnemiesAtributs.enemyRotationSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, _player.position) > _offSet.magnitude)
+        if (Vector3.Distance(transform.position, _player.position) > _offSet.magnitude && _life > 0)
             _rigidBody.velocity = dirWithOffset;
         else
         {

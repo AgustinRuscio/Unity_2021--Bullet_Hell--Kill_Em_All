@@ -22,29 +22,34 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Transform[] _spawnPoints;
 
+    [SerializeField]
+    private bool _active;
+
     private void Awake()
     {
-        _timer = new GenericTimer().SetCoolDown(_coolDown);
-
-        _enemyFactory = new EnemyFactory(_enemyPrefab);
+        if (_active)
+        {
+            _timer = new GenericTimer().SetCoolDown(_coolDown);
+            _enemyFactory = new EnemyFactory(_enemyPrefab);
+        }
     }
 
     private void Update()
     {
-        _timer.RunTimer();
-
-        if (_timer.CheckCoolDown() & _enemyCounter < _maxEnemies)
+        if (_active)
         {
-            int i = Random.Range(0, _spawnPoints.Length);
+            _timer.RunTimer();
 
-            _enemyFactory.MakeEnemy(_spawnPoints[i].position, Reduce);
-            _timer.ResetTimer();
-            _enemyCounter++;
+            if (_timer.CheckCoolDown() & _enemyCounter < _maxEnemies)
+            {
+                int i = Random.Range(0, _spawnPoints.Length);
+
+                _enemyFactory.MakeEnemy(_spawnPoints[i].position, Reduce);
+                _timer.ResetTimer();
+                _enemyCounter++;
+            }
         }
     }
 
-    private void Reduce()
-    {
-        _enemyCounter--;
-    }
+    private void Reduce() => _enemyCounter--;
 }

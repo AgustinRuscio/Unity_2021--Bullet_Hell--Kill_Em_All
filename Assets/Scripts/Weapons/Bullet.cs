@@ -17,6 +17,7 @@ public abstract class Bullet : MonoBehaviour
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
+        _rigidBody.freezeRotation = true;
         _timer = new GenericTimer().SetCoolDown(FlyWeightPointer.BulletAtributs.bulletLifeTime);
     }
 
@@ -42,7 +43,7 @@ public abstract class Bullet : MonoBehaviour
         transform.rotation = rotation;
         _destroyMethod = destroyMethod;
         _originalFwd = transform.forward;
-        transform.forward = fwd;
+        transform.forward = fwd.normalized;
         _damage *= multuplayer;
     }
 
