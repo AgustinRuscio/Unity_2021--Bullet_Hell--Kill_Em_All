@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
     private Action<Enemy> _destroyMethod;
@@ -17,6 +17,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     [SerializeField]
     protected ParticleSystem _deathParticles;
+
+    protected AudioSource _deathSound;
 
     [SerializeField]
     protected SkinnedMeshRenderer _renderer;
@@ -39,6 +41,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        _deathSound = GetComponent<AudioSource>();
         _rigidBody = GetComponent<Rigidbody>();
         _player = FindObjectOfType<PlayerModel>().transform;
 
@@ -71,6 +74,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     {
         _renderer.enabled = false;
         _deathParticles.Play();
+        _deathSound.Play();
 
         StartCoroutine(Wait());
     }

@@ -5,10 +5,14 @@
 
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class KamikazeEnemy : Enemy
 {
     [SerializeField]
     private ParticleSystem _explosionParticles;
+
+    [SerializeField]
+    private AudioSource _explosionSound;
 
     [SerializeField]
     private AudioSource _tikingSound;
@@ -23,7 +27,11 @@ public class KamikazeEnemy : Enemy
 
     int explosive;
 
-    private void Awake() => _timer = new GenericTimer().SetCoolDown(_coolDown);
+    private void Awake()
+    { 
+        _deathSound = GetComponent<AudioSource>();
+        _timer = new GenericTimer().SetCoolDown(_coolDown);
+    }
 
     protected override void Update()
     {
@@ -40,6 +48,7 @@ public class KamikazeEnemy : Enemy
         {
             _tikingSound.volume = 0f;
             _explosionParticles.Play();
+            _explosionSound.Play();
 
             Collider[] deathZone = Physics.OverlapSphere(transform.position, _explosionRadius);
 

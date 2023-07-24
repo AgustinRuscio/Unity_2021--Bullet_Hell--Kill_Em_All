@@ -3,6 +3,7 @@
 //--------------------------------------------
 
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class PlayerView
 {
     private Animator Animator;
 
+    private MonoBehaviour _behaviour;
+
     private Slider _slider;
     private float _maxLife;
 
@@ -18,10 +21,15 @@ public class PlayerView
     private Image _shotGunImage;
     private Image _rocketLuncherImage;
 
+    private Light _light;
+
     private Dictionary<string, Image> _weapons = new Dictionary<string, Image>();
 
-    public PlayerView(float maxLife) => _maxLife = maxLife;
-    
+    public PlayerView(float maxLife, MonoBehaviour mono)
+    { 
+        _maxLife = maxLife;
+        _behaviour = mono;
+    }
 
     public PlayerView SetImages(List<Image> images)
     {
@@ -36,6 +44,13 @@ public class PlayerView
 
         return this;
     }
+
+    public PlayerView SetLight(Light light)
+    {
+        _light = light;
+        return this;
+    }
+
 
     public PlayerView SetSlider(Slider slider)
     {
@@ -59,7 +74,20 @@ public class PlayerView
     public void SetDeath() => Animator.SetTrigger("Death");
     public void SetFire(bool fire) => Animator.SetBool("Fire", fire);
 
-    public void UpdateLifeBar(float health) => _slider.value = health / _maxLife;
+    public void UpdateLifeBar(float health)
+    {
+        _light.enabled = true;
+        _behaviour.StartCoroutine(TurnOffLight());
+        _slider.value = health / _maxLife;
+    }
+
+    IEnumerator TurnOffLight()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        _light.enabled = false;
+    }
+
     public void UpdateWeaponSelected(string weapon)
     {
         foreach (KeyValuePair<string, Image> image in _weapons)

@@ -39,6 +39,7 @@ public class PlayerModel : MonoBehaviour, IDamageable
 
     private Animator _animator;
 
+    private Light _light;
 
     [SerializeField]
     private float _speed;
@@ -88,6 +89,7 @@ public class PlayerModel : MonoBehaviour, IDamageable
 
         _rigidBody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+        _light = GetComponent<Light>();
         _timer = new GenericTimer().SetCoolDown(_coolDown);
 
         PlayerController controller = new PlayerController(this);
@@ -96,7 +98,7 @@ public class PlayerModel : MonoBehaviour, IDamageable
         SystemMethods += controller.SystemMethods;
 
        
-        PlayerView view = new PlayerView(_maxLife).SetAnimator(_animator).SetSlider(_slider).SetImages(GetAllImages());
+        PlayerView view = new PlayerView(_maxLife,this).SetAnimator(_animator).SetSlider(_slider).SetImages(GetAllImages()).SetLight(_light);
         MoveAnim += view.MovingAnim;
         UpdateLifeBar += view.UpdateLifeBar;
         DeathAnim += view.SetDeath;
