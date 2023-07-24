@@ -22,6 +22,9 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected ParticleSystem _particleSystem;
 
+    [SerializeField]
+    protected AudioSource _audioSource;
+
     protected Action<bool> FireAnim;
 
     public void SetFireAnim(Action<bool> fire) => FireAnim = fire;

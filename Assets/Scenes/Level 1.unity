@@ -876,6 +876,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 90394387, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 385201465, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -888,21 +892,9 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1630365738818443302, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2271609963747247172, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_Name
       value: Core
-      objectReference: {fileID: 0}
-    - target: {fileID: 2271609963747247173, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
-      propertyPath: _nextLevel
-      value: Level 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2271609963747247173, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
-      propertyPath: _roundTime
-      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2271609963747247174, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_RootOrder
@@ -946,18 +938,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2271609963747247174, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3549419604715111996, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BTN_NextLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3549419604715111996, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CanvasController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3683061114901172880, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

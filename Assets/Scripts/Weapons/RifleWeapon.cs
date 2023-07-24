@@ -17,6 +17,7 @@ public class RifleWeapon : Weapon
             {
                 BulletManager.instance.BulletFactory().MakeBullet(_spawnPoint.position, _spawnPoint.forward,_spawnPoint.rotation ,_damageMultiplayer);
                 _particleSystem.Play();
+                _audioSource.Play();
                 nextFireTime = Time.time + fireRate;
             }
         }

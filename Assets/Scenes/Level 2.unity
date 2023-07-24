@@ -876,6 +876,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 90394387, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 90394387, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dd43721ffbc2b034c99c4de90f8eefe3, type: 3}
     - target: {fileID: 385201465, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -956,6 +964,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CanvasController, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4495176536781586845, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dd43721ffbc2b034c99c4de90f8eefe3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
 --- !u!1001 &2314856916822404202

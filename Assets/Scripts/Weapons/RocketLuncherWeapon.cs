@@ -17,6 +17,7 @@ public class RocketLuncherWeapon : Weapon
             {
                 BulletManager.instance.RcoketFactory().MakeBullet(_spawnPoint.position, _spawnPoint.forward, _spawnPoint.rotation, _damageMultiplayer);
                 _particleSystem.Play();
+                _audioSource.Play();
                 nextFireTime = Time.time + fireRate;
             }
         }

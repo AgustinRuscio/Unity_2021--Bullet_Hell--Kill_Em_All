@@ -35,6 +35,7 @@ public class ShotGunWeapon : Weapon
 
                     BulletManager.instance.BulletFactory().MakeBullet(bulletPosition, _spawnPoint.forward, rotation, _damageMultiplayer);
                     _particleSystem.Play();
+                    _audioSource.Play();
                 }
             }
         }

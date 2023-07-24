@@ -227,6 +227,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1492917646172758059, guid: b8b4514d20641b243a82c851356253a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2403533591390511070, guid: b8b4514d20641b243a82c851356253a0, type: 3}
       propertyPath: _weapons.Array.data[1].active
       value: 1
@@ -876,6 +880,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 90394387, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eaa417792838b64197e9e075eb8fd31, type: 3}
     - target: {fileID: 385201465, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -906,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2271609963747247173, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: _roundTime
-      value: 120
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2271609963747247174, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_RootOrder
@@ -951,6 +959,14 @@ PrefabInstance:
     - target: {fileID: 2271609963747247174, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495176536781586845, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eaa417792838b64197e9e075eb8fd31, type: 3}
+    - target: {fileID: 5201703175919234740, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}

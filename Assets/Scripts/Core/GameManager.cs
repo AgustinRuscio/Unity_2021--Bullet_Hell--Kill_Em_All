@@ -37,6 +37,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string _nextLevel;
 
+    [SerializeField]
+    private AudioSource _levelMusic;
+
+    [SerializeField]
+    private AudioSource _pauseMusic;
+
+    [SerializeField]
+    private AudioSource _winMusic;
+
+    [SerializeField]
+    private AudioSource _loseMusic;
 
     private void Awake()
     {
@@ -80,11 +91,14 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             _pausePanel.SetActive(true);
+            _levelMusic.Pause();
+            _pauseMusic.Play();
         }
         else
         {
             Time.timeScale = 1f;
             _pausePanel.SetActive(false);
+            _levelMusic.Play();
         }
     }
 
@@ -101,12 +115,20 @@ public class GameManager : MonoBehaviour
     private void LoseLevel(params object[] parameters)
     {
         Time.timeScale = 0f;
+        _levelMusic.Stop();
         _losePanel.SetActive(true);
+
+        if (!_loseMusic.isPlaying)
+            _loseMusic.Play();
     }
     private void WinLevel()
     {
         Time.timeScale = 0;
+        _levelMusic.Stop();
         _winPanel.SetActive(true);
+
+        if(!_winMusic.isPlaying)
+            _winMusic.Play();
     }
 
     private void NextLevel(params object[] parameters)

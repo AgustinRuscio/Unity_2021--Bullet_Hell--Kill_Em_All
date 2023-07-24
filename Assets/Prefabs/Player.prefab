@@ -3591,6 +3591,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotGun
       objectReference: {fileID: 0}
+    - target: {fileID: 5481070772468601414, guid: 3fd15eadcffc7674b921d80247f42e33, type: 3}
+      propertyPath: _particleSystem
+      value: 
+      objectReference: {fileID: 2154240476991729850}
+    - target: {fileID: 6260396909347261411, guid: 3fd15eadcffc7674b921d80247f42e33, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd15eadcffc7674b921d80247f42e33, type: 3}
 --- !u!1 &363188423202318910 stripped
@@ -3601,6 +3609,11 @@ GameObject:
 --- !u!4 &363188423202551326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3364083735678995598, guid: 3fd15eadcffc7674b921d80247f42e33, type: 3}
+  m_PrefabInstance: {fileID: 3145181217047280272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2154240476991729850 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3909278322211244586, guid: 3fd15eadcffc7674b921d80247f42e33, type: 3}
   m_PrefabInstance: {fileID: 3145181217047280272}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7472951127216040150 stripped
@@ -3621,6 +3634,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 315789142522339272}
     m_Modifications:
+    - target: {fileID: -2709732210626145303, guid: b944c2034e052144db1d4b2da0e54ffc, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333041416572386289, guid: b944c2034e052144db1d4b2da0e54ffc, type: 3}
+      propertyPath: _particleSystem
+      value: 
+      objectReference: {fileID: 1751840359058500888}
     - target: {fileID: 5415926708267263679, guid: b944c2034e052144db1d4b2da0e54ffc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3692,6 +3713,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74cb83a2074171146b85b002e9556fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &1751840359058500888 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6006875115590476381, guid: b944c2034e052144db1d4b2da0e54ffc, type: 3}
+  m_PrefabInstance: {fileID: 5409804543409557317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5731828008309375963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 331286863318011038, guid: b944c2034e052144db1d4b2da0e54ffc, type: 3}
@@ -3704,12 +3730,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 315789142522339272}
     m_Modifications:
+    - target: {fileID: 2474476640736554603, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043342133509744068, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
+      propertyPath: _particleSystem
+      value: 
+      objectReference: {fileID: 4221226181998447563}
     - target: {fileID: 5067336568326295088, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
       propertyPath: m_Name
       value: Rocket Launcher
       objectReference: {fileID: 0}
     - target: {fileID: 5067336568326295095, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067336568326295095, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5373816983750095719, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
@@ -3765,6 +3803,11 @@ PrefabInstance:
 --- !u!1 &3910573794506564056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5067336568326295088, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
+  m_PrefabInstance: {fileID: 8077186035016822760}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4221226181998447563 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5369173936518259747, guid: 605a83f91f8843444bd47be9f077348a, type: 3}
   m_PrefabInstance: {fileID: 8077186035016822760}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4399724955251751778 stripped
