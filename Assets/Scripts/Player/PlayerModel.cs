@@ -256,7 +256,6 @@ public class PlayerModel : MonoBehaviour, IDamageable
     public void SpeedUp(float multiplayer, float time)
     {
         _speed *= multiplayer;
-        //feedBack
 
         StartCoroutine(BackToNormalSpeed(time));
     }

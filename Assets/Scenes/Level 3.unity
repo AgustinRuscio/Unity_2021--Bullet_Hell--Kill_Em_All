@@ -914,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2271609963747247173, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: _roundTime
-      value: 1
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 2271609963747247174, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_RootOrder
@@ -960,6 +960,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3683061114901172880, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4495176536781586845, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -967,6 +971,10 @@ PrefabInstance:
     - target: {fileID: 5201703175919234740, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065255967691817896, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
+      propertyPath: m_text
+      value: Great job warrior. You defeated all hordes. You can Go home now
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840be2a9e4d0bc44382a88dfd36fe20a, type: 3}
