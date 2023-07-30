@@ -17,13 +17,17 @@ public class MainPanelScreen : AbstractScreen
     [SerializeField]
     private GameObject _continueBTN;
 
-    private void Awake()
+    private void Awake() => UpdateBTNState();
+    
+
+    private void UpdateBTNState()
     {
-        if(PlayerPrefs.GetString("CurrentLevel") == string.Empty)
+        if (PlayerPrefs.GetString("CurrentLevel") == string.Empty)
             _continueBTN.SetActive(false);
         else
             _continueBTN.SetActive(true);
     }
+
 
     private void Start() => ScreenManager.instance.Push(this);
     
@@ -32,6 +36,11 @@ public class MainPanelScreen : AbstractScreen
     public void BTN_OpenControllers() => ScreenManager.instance.Push(_controllersPanel);
 
     public void BTN_Continue() => SceneManager.LoadScene(PlayerPrefs.GetString("CurrentLevel"));
+    public void BTN_DeleteData()
+    {
+        PlayerPrefs.DeleteAll();
+        UpdateBTNState();
+    }
 
     public void BTN_Quit() => Application.Quit();
 }

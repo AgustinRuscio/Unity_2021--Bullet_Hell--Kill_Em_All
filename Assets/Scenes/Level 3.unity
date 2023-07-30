@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: _weapons.Array.data[2].active
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5260613024254853662, guid: b8b4514d20641b243a82c851356253a0, type: 3}
+      propertyPath: m_Value
+      value: 0.539
+      objectReference: {fileID: 0}
     - target: {fileID: 7478534177367856276, guid: b8b4514d20641b243a82c851356253a0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

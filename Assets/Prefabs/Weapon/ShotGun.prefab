@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 5815086968078668755}
   _damageMultiplayer: 2
-  fireRate: 0.5
+  fireRate: 1
   _particleSystem: {fileID: 3909278322211244586}
   _audioSource: {fileID: 6260396909347261411}
   bulletCount: 5

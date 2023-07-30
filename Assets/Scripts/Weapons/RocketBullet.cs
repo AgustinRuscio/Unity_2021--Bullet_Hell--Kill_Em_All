@@ -34,4 +34,9 @@ public class RocketBullet : Bullet
         if (!_particleSystem.isPlaying)
             DestroyBullet();
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, _radius);
+    }
 }

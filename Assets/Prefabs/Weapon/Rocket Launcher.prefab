@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 4932317417822853489}
   _damageMultiplayer: 3
-  fireRate: 1
+  fireRate: 2
   _particleSystem: {fileID: 5369173936518259747}
   _audioSource: {fileID: 2474476640736554603}
 --- !u!82 &2474476640736554603
