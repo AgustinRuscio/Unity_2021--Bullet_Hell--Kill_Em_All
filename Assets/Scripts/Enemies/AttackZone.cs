@@ -12,6 +12,6 @@ public class AttackZone : MonoBehaviour
         var player = other.gameObject.GetComponent<PlayerModel>();
 
         if (player != null && !player.shield)
-            player.TakeDamage(FlyWeightPointer.EnemiesAtributs.meleeEnemyDamage);
+            player.TakeDamage(FlyWeightPointer.MeleeEnemiesAtributs.meleeEnemyDamage);
     }
 }

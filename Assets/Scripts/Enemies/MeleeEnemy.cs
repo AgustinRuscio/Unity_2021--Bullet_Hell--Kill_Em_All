@@ -27,11 +27,11 @@ public class MeleeEnemy : Enemy
         Vector3 dirWithOffset = dir + _offSet;
         dirWithOffset.Normalize();
 
-        dirWithOffset *= FlyWeightPointer.EnemiesAtributs.enemyBaseSpeed;
+        dirWithOffset *= FlyWeightPointer.MeleeEnemiesAtributs.meleeEnemyBaseSpeed;
 
         dirWithOffset.y = 0;
 
-        transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.EnemiesAtributs.enemyRotationSpeed * Time.deltaTime);
+        transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.MeleeEnemiesAtributs.meleeEnemyRotationSpeed * Time.deltaTime);
         
         if(Vector3.Distance(transform.position, _player.position) > _offSet.magnitude + 1 && _life>0)
             _rigidBody.velocity = dirWithOffset;
@@ -42,5 +42,5 @@ public class MeleeEnemy : Enemy
         }
     }
 
-    protected override void SetLife() => _life = FlyWeightPointer.EnemiesAtributs.meleeEnemyMaxLife;
+    protected override void SetLife() => _life = FlyWeightPointer.MeleeEnemiesAtributs.meleeEnemyMaxLife;
 }

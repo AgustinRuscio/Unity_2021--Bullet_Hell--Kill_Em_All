@@ -57,7 +57,7 @@ public class KamikazeEnemy : Enemy
                 PlayerModel damageable = deathZone[i].GetComponent<PlayerModel>();
 
                 if (damageable != null && !damageable.shield)
-                    damageable.TakeDamage(FlyWeightPointer.EnemiesAtributs.kamekazeEnemyDamage);
+                    damageable.TakeDamage(FlyWeightPointer.KamekaseEnemiesAtributs.kamekazeEnemyDamage);
             }
 
             explosive++;
@@ -73,11 +73,11 @@ public class KamikazeEnemy : Enemy
             Vector3 dirWithOffset = dir + _offSet;
             dirWithOffset.Normalize();
 
-            dirWithOffset *= FlyWeightPointer.EnemiesAtributs.enemyBaseSpeed;
+            dirWithOffset *= FlyWeightPointer.KamekaseEnemiesAtributs.meleeEnemyBaseSpeed;
 
             dirWithOffset.y = 0;
 
-            transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.EnemiesAtributs.enemyRotationSpeed * Time.deltaTime);
+            transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.KamekaseEnemiesAtributs.meleeEnemyRotationSpeed * Time.deltaTime);
 
             _rigidBody.velocity = dirWithOffset;
 
@@ -96,5 +96,5 @@ public class KamikazeEnemy : Enemy
         }
     }
 
-    protected override void SetLife() => _life = FlyWeightPointer.EnemiesAtributs.meleeEnemyMaxLife;
+    protected override void SetLife() => _life = FlyWeightPointer.KamekaseEnemiesAtributs.meleeEnemyMaxLife;
 }

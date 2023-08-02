@@ -82,6 +82,7 @@ public class PlayerModel : MonoBehaviour, IDamageable
 
     public bool shield;
 
+    public float _acceleration = 2f;
     void Awake()
     {
         _baseSpeed = _speed;
@@ -147,6 +148,14 @@ public class PlayerModel : MonoBehaviour, IDamageable
         direction = dir;
         direction.Normalize();
         direction *= _speed;
+
+        Vector3 targetVelocity = direction * _speed;
+
+        Vector3 velocityChange = targetVelocity - direction;
+
+        Vector3 acceleration = velocityChange * _acceleration * Time.fixedDeltaTime;
+
+        direction += acceleration;
 
         _rigidBody.velocity = direction;
     }

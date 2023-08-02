@@ -39,11 +39,11 @@ public class RangeEnemy : Enemy
         Vector3 dirWithOffset = dir + _offSet;
         dirWithOffset.Normalize();
 
-        dirWithOffset *= FlyWeightPointer.EnemiesAtributs.enemyBaseSpeed;
+        dirWithOffset *= FlyWeightPointer.RangeEnemiesAtributs.meleeEnemyBaseSpeed;
 
         dirWithOffset.y = 0;
 
-        transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.EnemiesAtributs.enemyRotationSpeed * Time.deltaTime);
+        transform.forward = Vector3.Lerp(transform.forward, dir, FlyWeightPointer.RangeEnemiesAtributs.meleeEnemyRotationSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, _player.position) > _offSet.magnitude && _life > 0)
             _rigidBody.velocity = dirWithOffset;
@@ -67,5 +67,5 @@ public class RangeEnemy : Enemy
 
     public void Throw() => BulletManager.instance.AxeFactory().MakeBullet(_shootPoint.position, _shootPoint.forward, transform.rotation, _damageMultiplayer);
 
-    protected override void SetLife() => _life = FlyWeightPointer.EnemiesAtributs.rangeEnemyMaxLife;
+    protected override void SetLife() => _life = FlyWeightPointer.RangeEnemiesAtributs.rangeEnemyMaxLife;
 }

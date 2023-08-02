@@ -62,7 +62,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     public void ReturnEnemy()
     {
         DeleteFromList();
-        _life = FlyWeightPointer.EnemiesAtributs.meleeEnemyMaxLife;
+        _life = FlyWeightPointer.MeleeEnemiesAtributs.meleeEnemyMaxLife;
     }
 
     protected void DestroyEnemy() => _destroyMethod(this);

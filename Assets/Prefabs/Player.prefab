@@ -3481,7 +3481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a41f273a232a1646961c64b9b62f9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 100
   _maxLife: 100
   _slider: {fileID: 5260613024254853662}
   _rotateSpeed: 5
